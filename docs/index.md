@@ -1,77 +1,50 @@
-# Welcome to Your Documentation
+# The Return of My Old Machine
 
-Welcome to your new documentation site built with **MkDocs** and the **Material** theme! 🚀
+## Welcome
 
-## Overview
+This is a technical documentation project chronicling the restoration, experimentation, and preservation of an old AMD-based desktop computer. What started as a forgotten machine gathering dust has become a journey through hardware restoration, Linux optimization, and retro computing exploration.
 
-This documentation site is powered by:
+## Project Overview
 
-- **[MkDocs](https://www.mkdocs.org/)** - A fast, simple static site generator for project documentation
-- **[Material for MkDocs](https://squidfunk.github.io/mkdocs-material/)** - A beautiful, responsive theme with advanced features
+This documentation serves as both a technical archive and an engineering notebook, capturing the process of bringing vintage hardware back to life and transforming it into a functional, lightweight workstation.
 
-## Features
+**Core Focus Areas:**
 
-### 🎨 Beautiful Design
-- Modern, responsive layout
-- Dark/light mode toggle
-- Customizable color schemes
+- **Hardware Restoration**: Diagnosing, repairing, and preserving aging components
+- **Linux Experimentation**: Optimizing a lightweight Linux Mint XFCE installation
+- **Retro Computing**: Exploring old games, emulation, and vintage software
+- **Self-Hosting**: Running lightweight services and experiments
+- **Technical Storytelling**: Documenting the journey, challenges, and discoveries
 
-### 🔍 Powerful Search
-- Full-text search
-- Search suggestions
-- Search highlighting
+## Philosophy
 
-### 📝 Rich Content
-- Syntax highlighting for code blocks
-- Admonitions (notes, warnings, tips)
-- Tabbed content
-- Task lists
-- Mermaid diagrams
-- Math equations
+This project embraces:
 
-### 🚀 Developer Friendly
-- Live reload during development
-- Fast build times
-- Easy deployment
+- **Preservation over replacement** - extending hardware lifespan
+- **Minimalism over excess** - lightweight, efficient solutions
+- **Learning over perfection** - experimentation and iteration
+- **Documentation over assumptions** - capturing knowledge for future reference
 
-## Quick Start
+## What You'll Find Here
 
-Get started by exploring the documentation:
+- Detailed hardware specifications and restoration process
+- Linux configuration, optimization, and software stack
+- Gaming experiments with RetroArch, Wine, and old titles
+- Self-hosting experiments and development environment setup
+- Photo gallery documenting the transformation
+- Personal journal entries and lessons learned
+- Benchmarks, resources, and technical references
 
-- **[Getting Started](getting-started.md)** - Learn how to set up and use this documentation
-- **[User Guide](user-guide.md)** - Detailed guides and tutorials
-- **[Reference](reference.md)** - API reference and technical details
+## Technical Context
 
-## Example Code Block
+This machine represents a specific era of computing - not cutting-edge, not obsolete, but somewhere in between. It's powerful enough to be useful, old enough to be interesting, and unique enough to be worth preserving.
 
-```python
-def hello_world():
-    """A simple hello world function."""
-    print("Hello, World!")
-    return True
-
-if __name__ == "__main__":
-    hello_world()
-```
-
-## Admonition Example
-
-!!! note "Information"
-    This is a note admonition. Use it to highlight important information.
-
-!!! tip "Pro Tip"
-    You can customize the theme colors, fonts, and features in `mkdocs.yml`.
-
-!!! warning "Warning"
-    Make sure to activate the virtual environment before running MkDocs commands.
-
-## Next Steps
-
-1. Customize the `mkdocs.yml` configuration file
-2. Add your own content to the `docs/` directory
-3. Run `mkdocs serve` to preview your changes
-4. Build and deploy your documentation
+The goal isn't to compete with modern hardware. The goal is to explore what's possible with what already exists.
 
 ---
 
-**Happy documenting!** 📚
+**Maintainer**: David Willian de Siqueira  
+**Repository**: [github.com/davidwsiqueira/the-return-of-my-old-machine](https://github.com/davidwsiqueira/the-return-of-my-old-machine)
+
+!!! note "Documentation Status"
+    This documentation is actively being developed. Some sections may contain placeholder content or TODO markers indicating future additions.

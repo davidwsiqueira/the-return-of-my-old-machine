@@ -1,8 +1,22 @@
-site_name: The Return of My Old Machine
-site_description: Retro Linux engineering workstation restoration documentation
-site_author: Your Name
-site_url: https://example.com
+# ==================================================
+# The Return of My Old Machine
+# Documentation Configuration
+# ==================================================
 
+site_name: The Return of My Old Machine
+site_description: A personal restoration and documentation project focused on reviving an old AMD-based desktop computer, Linux experimentation, and retro computing preservation
+site_author: David Willian de Siqueira
+site_url: https://davidwsiqueira.github.io/the-return-of-my-old-machine
+
+# Repository (disabled to keep header clean)
+# repo_url: https://github.com/davidwsiqueira/the-return-of-my-old-machine
+# repo_name: davidwsiqueira/the-return-of-my-old-machine
+edit_uri: ""
+
+# Copyright
+copyright: Maintained by David Willian de Siqueira
+
+# Theme Configuration
 theme:
   name: material
   palette:
@@ -29,15 +43,17 @@ theme:
   favicon: assets/logo.svg
   icon:
     repo: fontawesome/brands/github
-  
-# Custom CSS for retro terminal aesthetic
+
+# Custom CSS - Industrial UNIX Archive Aesthetic
 extra_css:
   - stylesheets/extra.css
 
-# Copyright
-copyright: Maintained by David Willian de Siqueira
+# Plugins
+plugins:
+  - search:
+      lang: en
 
-# Extensions
+# Markdown Extensions
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
@@ -69,26 +85,85 @@ markdown_extensions:
   - toc:
       permalink: true
 
-# Plugins
-plugins:
-  - search:
-      lang: en
-
-# Page tree
+# Navigation Structure
 nav:
   - Home: index.md
-  - Getting Started: getting-started.md
-  - User Guide: user-guide.md
+  
+  - About:
+    - Project Overview: about/project-overview.md
+    - Goals: about/goals.md
+    - Hardware Summary: about/hardware-summary.md
+    - Restoration Philosophy: about/restoration-philosophy.md
+  
+  - Hardware:
+    - Motherboard: hardware/motherboard.md
+    - CPU: hardware/cpu.md
+    - RAM: hardware/ram.md
+    - GPU: hardware/gpu.md
+    - Storage: hardware/storage.md
+    - Power Supply: hardware/power-supply.md
+    - Cooling: hardware/cooling.md
+    - Peripherals: hardware/peripherals.md
+  
+  - Restoration:
+    - Initial Condition: restoration/initial-condition.md
+    - Diagnostics: restoration/diagnostics.md
+    - Capacitor Repair: restoration/capacitor-repair.md
+    - Cleaning Process: restoration/cleaning-process.md
+    - Assembly: restoration/assembly.md
+    - Cable Management: restoration/cable-management.md
+    - Final Result: restoration/final-result.md
+  
+  - Linux:
+    - Distro Selection: linux/distro-selection.md
+    - Linux Mint XFCE: linux/linux-mint-xfce.md
+    - Performance Optimization: linux/performance-optimization.md
+    - Drivers: linux/drivers.md
+    - Software Stack: linux/software-stack.md
+    - Docker & Services: linux/docker-and-services.md
+    - Samba & Network: linux/samba-and-network.md
+    - Monitoring: linux/monitoring.md
+  
+  - Gaming:
+    - RetroArch: gaming/retroarch.md
+    - Wine & Lutris: gaming/wine-and-lutris.md
+    - Old Games: gaming/old-games.md
+    - Performance Tests: gaming/performance-tests.md
+  
+  - Experiments:
+    - Self-Hosting: experiments/self-hosting.md
+    - Development Environment: experiments/development-environment.md
+    - Lightweight Server: experiments/lightweight-server.md
+    - Dashboards: experiments/dashboards.md
+    - Future Ideas: experiments/future-ideas.md
+  
+  - Gallery:
+    - Wallpapers: gallery/wallpapers.md
+    - Photos: gallery/photos.md
+    - Desktop Setup: gallery/desktop-setup.md
+    - Before & After: gallery/before-and-after.md
+  
+  - Journal:
+    - Timeline: journal/timeline.md
+    - Lessons Learned: journal/lessons-learned.md
+    - Unexpected Problems: journal/unexpected-problems.md
+    - Personal Thoughts: journal/personal-thoughts.md
+  
+  - Resources:
+    - Benchmarks: resources/benchmarks.md
+    - Downloads: resources/downloads.md
+    - Useful Links: resources/useful-links.md
+    - References: resources/references.md
 
-# Extra
+# Extra Configuration
 extra:
   generator: false
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/davidwsiqueira/the-return-of-my-old-machine
-      name: GitHub
+      name: GitHub Repository
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/david-willian-siqueira/
-      name: LinkedIn
+      name: LinkedIn Profile
 
 # Made with Bob

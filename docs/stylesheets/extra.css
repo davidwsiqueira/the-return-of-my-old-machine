@@ -14,9 +14,9 @@
   --retro-dark-green: #111811;
   --retro-soft-green: #1a261a;
 
-  /* Authentic phosphor-style green (vintage CRT) */
-  --retro-terminal-green: #4fbf4f;
-  --retro-neon-green: #72c772;
+  /* Vintage phosphor green (muted, atmospheric) */
+  --retro-terminal-green: #42a842;
+  --retro-neon-green: #58b858;
 
   /* Authentic vintage text colors */
   --retro-light-gray: #d6d6d6;
@@ -25,13 +25,13 @@
   --retro-code-black: #0a0d0a;
 
   /* Subtle borders */
-  --retro-border-green: rgba(92, 173, 92, 0.18);
+  --retro-border-green: rgba(66, 168, 66, 0.18);
 
   /* Very restrained glow */
-  --glow-subtle: 0 0 1px rgba(92, 173, 92, 0.08);
-  --glow-soft: 0 0 2px rgba(92, 173, 92, 0.12);
-  --glow-medium: 0 0 4px rgba(92, 173, 92, 0.14);
-  --glow-focus: 0 0 6px rgba(92, 173, 92, 0.18);
+  --glow-subtle: 0 0 1px rgba(66, 168, 66, 0.08);
+  --glow-soft: 0 0 2px rgba(66, 168, 66, 0.12);
+  --glow-medium: 0 0 4px rgba(66, 168, 66, 0.14);
+  --glow-focus: 0 0 6px rgba(66, 168, 66, 0.18);
 }
 
 /* ============================================
@@ -243,10 +243,24 @@ body {
   color: var(--retro-light-gray);
 }
 
+.md-search__input::placeholder {
+  color: var(--retro-light-gray);
+  opacity: 0.7;
+}
+
 .md-search__input:focus {
   border-color: var(--retro-terminal-green);
 
   box-shadow: var(--glow-focus);
+}
+
+/* Search icon color */
+.md-search__icon {
+  color: var(--retro-light-gray);
+}
+
+.md-search__icon svg {
+  fill: var(--retro-light-gray);
 }
 
 /* ============================================

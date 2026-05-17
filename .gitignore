@@ -1,5 +1,6 @@
-# MkDocs build output
+# MkDocs
 site/
+.cache/
 
 # Python
 __pycache__/
@@ -26,35 +27,24 @@ wheels/
 .installed.cfg
 *.egg
 
-# macOS
-.DS_Store
-.AppleDouble
-.LSOverride
-Icon
-._*
-.DocumentRevisions-V100
-.fseventsd
-.Spotlight-V100
-.TemporaryItems
-.Trashes
-.VolumeIcon.icns
-.com.apple.timemachine.donotpresent
-.AppleDB
-.AppleDesktop
-Network Trash Folder
-Temporary Items
-.apdisk
-
 # IDEs
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
+.DS_Store
 
 # OS
 Thumbs.db
-ehthumbs.db
-Desktop.ini
+.DS_Store
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.bak
+*.backup
 
 # Made with Bob
