@@ -1,0 +1,95 @@
+site_name: The Return of My Old Machine
+site_description: Retro Linux engineering workstation restoration documentation
+site_author: Your Name
+site_url: https://example.com
+
+theme:
+  name: material
+  palette:
+    # Force dark mode only - retro terminal aesthetic
+    - scheme: slate
+      primary: green
+      accent: green
+  font:
+    text: Roboto Mono
+    code: Courier New
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.tracking
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+  icon:
+    repo: fontawesome/brands/github
+  
+# Custom CSS for retro terminal aesthetic
+extra_css:
+  - stylesheets/extra.css
+
+# Repository
+repo_name: The Return of My Old Machine
+repo_url: https://github.com/your-username/old-machine-restoration
+
+# Copyright
+copyright: Copyright &copy; 2026 - Retro Linux Engineering Workstation Restoration
+
+# Extensions
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - admonition
+  - pymdownx.details
+  - pymdownx.arithmatex:
+      generic: true
+  - attr_list
+  - md_in_html
+  - def_list
+  - tables
+  - footnotes
+  - toc:
+      permalink: true
+
+# Plugins
+plugins:
+  - search:
+      lang: en
+
+# Page tree
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - User Guide: user-guide.md
+
+# Extra
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/your-username
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/your-username
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/your-username
+
+# Made with Bob

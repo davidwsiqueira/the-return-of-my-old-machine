@@ -1,0 +1,459 @@
+/* ============================================
+   Retro Linux Engineering Workstation Theme
+   Dark Terminal-Style Aesthetic
+   ============================================ */
+
+:root {
+  /* Color Palette */
+  --retro-black: #0a0a0a;
+  --retro-matte-black: #121212;
+  --retro-dark-green: #1a2f1a;
+  --retro-terminal-green: #33ff33;
+  --retro-soft-green: #2d5f2d;
+  --retro-neon-green: #39ff14;
+  --retro-light-gray: #d0d0d0; /* Improved readability: increased from #c0c0c0 */
+  --retro-medium-gray: #808080;
+  --retro-code-black: #0d0d0d;
+  --retro-border-green: #1f4d1f;
+  
+  /* Refined glow intensities (reduced by ~12%) */
+  --glow-subtle: 0 0 1.5px rgba(51, 255, 51, 0.25); /* was 0.3 */
+  --glow-soft: 0 0 3px rgba(51, 255, 51, 0.3); /* was 0.4 */
+  --glow-medium: 0 0 5px rgba(57, 255, 20, 0.25); /* was 0.3 */
+  --glow-focus: 0 0 6px rgba(51, 255, 51, 0.25); /* was 0.3 */
+}
+
+/* ============================================
+   Global Theme Overrides
+   ============================================ */
+
+/* Force dark mode background */
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color: var(--retro-matte-black);
+  --md-default-fg-color: var(--retro-light-gray);
+  --md-code-bg-color: var(--retro-code-black);
+  --md-code-fg-color: var(--retro-terminal-green);
+  --md-primary-fg-color: var(--retro-dark-green);
+  --md-accent-fg-color: var(--retro-terminal-green);
+}
+
+/* Body and main content with subtle CRT texture */
+body {
+  background-color: var(--retro-matte-black) !important;
+  color: var(--retro-light-gray) !important;
+  /* Extremely subtle scanline texture */
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.03) 2px,
+      rgba(0, 0, 0, 0.03) 4px
+    );
+}
+
+.md-main {
+  background-color: transparent;
+}
+
+.md-content {
+  color: var(--retro-light-gray);
+}
+
+/* ============================================
+   Typography - Technical Monospace Feel
+   ============================================ */
+
+/* Headers with monospace technical feel */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  color: var(--retro-terminal-green);
+  font-family: 'Courier New', 'Consolas', 'Monaco', monospace;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-shadow: var(--glow-subtle); /* Refined glow */
+}
+
+.md-typeset h1 {
+  border-bottom: 2px solid var(--retro-dark-green);
+  padding-bottom: 0.5rem;
+}
+
+/* Body text - improved readability */
+.md-typeset {
+  font-family: 'Roboto Mono', 'Courier New', monospace;
+  font-size: 0.9rem;
+  line-height: 1.8; /* Increased from 1.7 for better readability */
+  color: var(--retro-light-gray);
+}
+
+/* Paragraphs - enhanced contrast for long-form reading */
+.md-typeset p {
+  color: var(--retro-light-gray);
+  margin-bottom: 1.2em;
+}
+
+/* ============================================
+   Sidebar - Dark Green Terminal Aesthetic
+   ============================================ */
+
+/* Sidebar background */
+.md-sidebar {
+  background-color: var(--retro-dark-green) !important;
+  border-right: 1px solid var(--retro-border-green);
+}
+
+.md-sidebar--primary {
+  background: linear-gradient(180deg, var(--retro-dark-green) 0%, #152815 100%);
+}
+
+/* Sidebar navigation items */
+.md-nav {
+  color: var(--retro-light-gray);
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.85rem;
+}
+
+.md-nav__link {
+  color: var(--retro-light-gray) !important;
+  transition: all 0.2s ease;
+}
+
+/* Active navigation item */
+.md-nav__link--active {
+  color: var(--retro-terminal-green) !important;
+  font-weight: 600;
+  background-color: rgba(51, 255, 51, 0.08); /* Reduced from 0.1 */
+  border-left: 3px solid var(--retro-terminal-green);
+  padding-left: 0.8rem;
+  text-shadow: var(--glow-soft); /* Refined glow */
+}
+
+/* Hover effects - refined subtle glow */
+.md-nav__link:hover {
+  color: var(--retro-neon-green) !important;
+  background-color: rgba(57, 255, 20, 0.06); /* Reduced from 0.08 */
+  text-shadow: var(--glow-medium); /* Refined glow */
+  transform: translateX(2px);
+}
+
+/* Sidebar title */
+.md-nav__title {
+  background-color: var(--retro-soft-green);
+  color: var(--retro-terminal-green);
+  font-weight: 700;
+  border-bottom: 1px solid var(--retro-border-green);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.75rem;
+}
+
+/* ============================================
+   Code Blocks - Classic UNIX Terminal Style
+   ============================================ */
+
+/* Code block container */
+.md-typeset pre {
+  background-color: var(--retro-code-black) !important;
+  border: 1px solid var(--retro-border-green);
+  border-left: 3px solid var(--retro-terminal-green);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+  margin: 1.5rem 0;
+}
+
+/* Code text */
+.md-typeset code {
+  background-color: var(--retro-code-black);
+  color: var(--retro-terminal-green);
+  font-family: 'Courier New', 'Consolas', 'Monaco', monospace;
+  font-size: 0.85rem;
+  border: 1px solid var(--retro-border-green);
+  padding: 0.2rem 0.4rem;
+}
+
+/* Inline code */
+.md-typeset p code,
+.md-typeset li code {
+  background-color: var(--retro-code-black);
+  color: var(--retro-terminal-green);
+  border: 1px solid var(--retro-border-green);
+  padding: 0.15rem 0.4rem;
+  font-weight: 500;
+}
+
+/* Syntax highlighting - terminal green theme */
+.highlight .hll { background-color: var(--retro-soft-green); }
+.highlight .c { color: var(--retro-medium-gray); font-style: italic; } /* Comment */
+.highlight .k { color: var(--retro-terminal-green); font-weight: bold; } /* Keyword */
+.highlight .o { color: var(--retro-terminal-green); } /* Operator */
+.highlight .n { color: var(--retro-light-gray); } /* Name */
+.highlight .s { color: #66ff66; } /* String */
+.highlight .nb { color: var(--retro-terminal-green); } /* Built-in */
+.highlight .nf { color: var(--retro-neon-green); font-weight: bold; } /* Function */
+
+/* Copy button styling */
+.md-clipboard {
+  color: var(--retro-terminal-green) !important;
+}
+
+.md-clipboard:hover {
+  color: var(--retro-neon-green) !important;
+  background-color: rgba(57, 255, 20, 0.1);
+}
+
+/* ============================================
+   Header - Minimal Dark Design
+   ============================================ */
+
+.md-header {
+  background-color: var(--retro-black);
+  border-bottom: 1px solid var(--retro-border-green);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.md-header__title {
+  color: var(--retro-terminal-green);
+  font-family: 'Courier New', monospace;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+}
+
+/* Search bar */
+.md-search__input {
+  background-color: var(--retro-code-black);
+  border: 1px solid var(--retro-border-green);
+  color: var(--retro-light-gray);
+}
+
+.md-search__input:focus {
+  border-color: var(--retro-terminal-green);
+  box-shadow: var(--glow-focus); /* Refined glow */
+}
+
+/* ============================================
+   Links and Interactive Elements
+   ============================================ */
+
+.md-typeset a {
+  color: var(--retro-terminal-green);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--retro-terminal-green);
+  transition: all 0.2s ease;
+}
+
+.md-typeset a:hover {
+  color: var(--retro-neon-green);
+  border-bottom: 1px solid var(--retro-neon-green);
+  text-shadow: 0 0 3px rgba(57, 255, 20, 0.3); /* Refined glow - reduced from 4px/0.4 */
+}
+
+/* ============================================
+   Tables - Technical Grid Style
+   ============================================ */
+
+.md-typeset table:not([class]) {
+  border: 1px solid var(--retro-border-green);
+  background-color: var(--retro-black);
+}
+
+.md-typeset table:not([class]) th {
+  background-color: var(--retro-dark-green);
+  color: var(--retro-terminal-green);
+  border-bottom: 2px solid var(--retro-terminal-green);
+  font-family: 'Courier New', monospace;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+.md-typeset table:not([class]) td {
+  border: 1px solid var(--retro-border-green);
+  color: var(--retro-light-gray);
+}
+
+.md-typeset table:not([class]) tr:hover {
+  background-color: rgba(51, 255, 51, 0.05);
+}
+
+/* ============================================
+   Admonitions - Terminal Alert Style
+   ============================================ */
+
+.md-typeset .admonition {
+  border-left: 3px solid var(--retro-terminal-green);
+  background-color: rgba(26, 47, 26, 0.5);
+  border-radius: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.md-typeset .admonition-title {
+  background-color: var(--retro-dark-green);
+  color: var(--retro-terminal-green);
+  font-family: 'Courier New', monospace;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+/* Warning admonition */
+.md-typeset .admonition.warning {
+  border-left-color: #ffaa00;
+}
+
+.md-typeset .admonition.warning > .admonition-title {
+  background-color: rgba(255, 170, 0, 0.1);
+  color: #ffaa00;
+}
+
+/* ============================================
+   Footer - Minimal Dark
+   ============================================ */
+
+.md-footer {
+  background-color: var(--retro-black);
+  border-top: 1px solid var(--retro-border-green);
+  color: var(--retro-medium-gray);
+}
+
+.md-footer-meta {
+  background-color: var(--retro-black);
+}
+
+/* ============================================
+   Scrollbar - Terminal Style
+   ============================================ */
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--retro-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--retro-dark-green);
+  border: 1px solid var(--retro-border-green);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--retro-soft-green);
+  box-shadow: 0 0 3px rgba(51, 255, 51, 0.25); /* Refined glow */
+}
+
+/* ============================================
+   Buttons and Controls
+   ============================================ */
+
+.md-typeset .md-button {
+  background-color: var(--retro-dark-green);
+  color: var(--retro-terminal-green);
+  border: 1px solid var(--retro-terminal-green);
+  font-family: 'Courier New', monospace;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.2s ease;
+}
+
+.md-typeset .md-button:hover {
+  background-color: var(--retro-soft-green);
+  color: var(--retro-neon-green);
+  box-shadow: 0 0 6px rgba(51, 255, 51, 0.25); /* Refined glow */
+  transform: translateY(-1px);
+}
+
+/* ============================================
+   Navigation Tabs
+   ============================================ */
+
+.md-tabs {
+  background-color: var(--retro-black);
+  border-bottom: 1px solid var(--retro-border-green);
+}
+
+.md-tabs__link {
+  color: var(--retro-light-gray);
+  font-family: 'Courier New', monospace;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+}
+
+.md-tabs__link--active {
+  color: var(--retro-terminal-green);
+  border-bottom: 2px solid var(--retro-terminal-green);
+}
+
+.md-tabs__link:hover {
+  color: var(--retro-neon-green);
+  text-shadow: 0 0 3px rgba(57, 255, 20, 0.25); /* Refined glow */
+}
+
+/* ============================================
+   Content Area Refinements
+   ============================================ */
+
+.md-content__inner {
+  padding: 2rem 1.5rem;
+}
+
+/* Horizontal rules */
+.md-typeset hr {
+  border-bottom: 1px solid var(--retro-border-green);
+  margin: 2rem 0;
+}
+
+/* Blockquotes */
+.md-typeset blockquote {
+  border-left: 3px solid var(--retro-terminal-green);
+  background-color: rgba(26, 47, 26, 0.3);
+  color: var(--retro-light-gray);
+  padding: 1rem 1.5rem;
+  font-style: italic;
+}
+
+/* Lists */
+.md-typeset ul li::marker,
+.md-typeset ol li::marker {
+  color: var(--retro-terminal-green);
+}
+
+/* ============================================
+   Responsive Adjustments
+   ============================================ */
+
+@media screen and (max-width: 76.1875em) {
+  .md-nav--primary .md-nav__title {
+    background-color: var(--retro-dark-green);
+    color: var(--retro-terminal-green);
+  }
+}
+
+/* ============================================
+   Print Styles - Maintain Readability
+   ============================================ */
+
+@media print {
+  body {
+    background-color: white !important;
+    color: black !important;
+  }
+  
+  .md-typeset h1,
+  .md-typeset h2,
+  .md-typeset h3 {
+    color: black !important;
+    text-shadow: none !important;
+  }
+}
+
+/* Made with Bob */
