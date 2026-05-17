@@ -1,54 +1,70 @@
 /* ============================================
    Retro Linux Engineering Workstation Theme
-   Dark Terminal-Style Aesthetic
+   Industrial UNIX Archive Aesthetic
+   Refined Minimal Edition
    ============================================ */
 
 :root {
-  /* Color Palette */
-  --retro-black: #0a0a0a;
-  --retro-matte-black: #121212;
-  --retro-dark-green: #1a2f1a;
-  --retro-terminal-green: #33ff33;
-  --retro-soft-green: #2d5f2d;
-  --retro-neon-green: #39ff14;
-  --retro-light-gray: #d0d0d0; /* Improved readability: increased from #c0c0c0 */
-  --retro-medium-gray: #808080;
-  --retro-code-black: #0d0d0d;
-  --retro-border-green: #1f4d1f;
-  
-  /* Refined glow intensities (reduced by ~12%) */
-  --glow-subtle: 0 0 1.5px rgba(51, 255, 51, 0.25); /* was 0.3 */
-  --glow-soft: 0 0 3px rgba(51, 255, 51, 0.3); /* was 0.4 */
-  --glow-medium: 0 0 5px rgba(57, 255, 20, 0.25); /* was 0.3 */
-  --glow-focus: 0 0 6px rgba(51, 255, 51, 0.25); /* was 0.3 */
+  /* ============================================
+     Color Palette - Authentic Vintage CRT
+     ============================================ */
+
+  --retro-black: #0b0d0b;
+  --retro-matte-black: #101310;
+  --retro-dark-green: #111811;
+  --retro-soft-green: #1a261a;
+
+  /* Authentic phosphor-style green (vintage CRT) */
+  --retro-terminal-green: #4fbf4f;
+  --retro-neon-green: #72c772;
+
+  /* Authentic vintage text colors */
+  --retro-light-gray: #d6d6d6;
+  --retro-medium-gray: #8a8a8a;
+
+  --retro-code-black: #0a0d0a;
+
+  /* Subtle borders */
+  --retro-border-green: rgba(92, 173, 92, 0.18);
+
+  /* Very restrained glow */
+  --glow-subtle: 0 0 1px rgba(92, 173, 92, 0.08);
+  --glow-soft: 0 0 2px rgba(92, 173, 92, 0.12);
+  --glow-medium: 0 0 4px rgba(92, 173, 92, 0.14);
+  --glow-focus: 0 0 6px rgba(92, 173, 92, 0.18);
 }
 
 /* ============================================
    Global Theme Overrides
    ============================================ */
 
-/* Force dark mode background */
 [data-md-color-scheme="slate"] {
   --md-default-bg-color: var(--retro-matte-black);
   --md-default-fg-color: var(--retro-light-gray);
+
   --md-code-bg-color: var(--retro-code-black);
   --md-code-fg-color: var(--retro-terminal-green);
+
   --md-primary-fg-color: var(--retro-dark-green);
   --md-accent-fg-color: var(--retro-terminal-green);
 }
 
-/* Body and main content with subtle CRT texture */
+/* ============================================
+   Body & Background Texture
+   ============================================ */
+
 body {
   background-color: var(--retro-matte-black) !important;
   color: var(--retro-light-gray) !important;
-  /* Extremely subtle scanline texture */
+
+  /* Extremely subtle CRT texture */
   background-image:
     repeating-linear-gradient(
       0deg,
       transparent,
-      transparent 2px,
-      rgba(0, 0, 0, 0.03) 2px,
-      rgba(0, 0, 0, 0.03) 4px
+      transparent 3px,
+      rgba(255,255,255,0.008) 3px,
+      rgba(255,255,255,0.008) 4px
     );
 }
 
@@ -61,10 +77,18 @@ body {
 }
 
 /* ============================================
-   Typography - Technical Monospace Feel
+   Typography
    ============================================ */
 
-/* Headers with monospace technical feel */
+.md-typeset {
+  font-family: 'Roboto Mono', 'Courier New', monospace;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: var(--retro-light-gray);
+}
+
+/* Headings */
+
 .md-typeset h1,
 .md-typeset h2,
 .md-typeset h3,
@@ -72,263 +96,445 @@ body {
 .md-typeset h5,
 .md-typeset h6 {
   color: var(--retro-terminal-green);
-  font-family: 'Courier New', 'Consolas', 'Monaco', monospace;
+  font-family: 'Courier New', 'Consolas', monospace;
   font-weight: 600;
-  letter-spacing: 0.5px;
-  text-shadow: var(--glow-subtle); /* Refined glow */
+  letter-spacing: 0.4px;
+  text-shadow: none;
+  margin-top: 1.5rem;
+  margin-bottom: 0.8rem;
 }
 
 .md-typeset h1 {
-  border-bottom: 2px solid var(--retro-dark-green);
+  font-size: 1.4rem;
+  border-bottom: 1px solid var(--retro-border-green);
   padding-bottom: 0.5rem;
+  margin-top: 0;
 }
 
-/* Body text - improved readability */
-.md-typeset {
-  font-family: 'Roboto Mono', 'Courier New', monospace;
-  font-size: 0.9rem;
-  line-height: 1.8; /* Increased from 1.7 for better readability */
-  color: var(--retro-light-gray);
+.md-typeset h2 {
+  font-size: 1.15rem;
 }
 
-/* Paragraphs - enhanced contrast for long-form reading */
+.md-typeset h3 {
+  font-size: 1.05rem;
+}
+
+.md-typeset h4 {
+  font-size: 0.98rem;
+}
+
+.md-typeset h5,
+.md-typeset h6 {
+  font-size: 0.92rem;
+}
+
 .md-typeset p {
   color: var(--retro-light-gray);
-  margin-bottom: 1.2em;
+  margin-bottom: 1.25em;
 }
 
 /* ============================================
-   Sidebar - Dark Green Terminal Aesthetic
+   Sidebar
    ============================================ */
 
-/* Sidebar background */
 .md-sidebar {
   background-color: var(--retro-dark-green) !important;
   border-right: 1px solid var(--retro-border-green);
 }
 
+/* Removed strong gradient */
 .md-sidebar--primary {
-  background: linear-gradient(180deg, var(--retro-dark-green) 0%, #152815 100%);
+  background: #111811;
 }
 
-/* Sidebar navigation items */
 .md-nav {
   color: var(--retro-light-gray);
   font-family: 'Roboto Mono', monospace;
-  font-size: 0.85rem;
+  font-size: 0.84rem;
 }
 
 .md-nav__link {
   color: var(--retro-light-gray) !important;
-  transition: all 0.2s ease;
+  transition: color 0.18s ease,
+              background-color 0.18s ease;
 }
 
-/* Active navigation item */
+/* Active item */
+
 .md-nav__link--active {
   color: var(--retro-terminal-green) !important;
   font-weight: 600;
-  background-color: rgba(51, 255, 51, 0.08); /* Reduced from 0.1 */
-  border-left: 3px solid var(--retro-terminal-green);
-  padding-left: 0.8rem;
-  text-shadow: var(--glow-soft); /* Refined glow */
+
+  background-color: rgba(92, 173, 92, 0.05);
+
+  border-left: 2px solid var(--retro-terminal-green);
+
+  padding-left: 0.75rem;
+
+  text-shadow: none;
 }
 
-/* Hover effects - refined subtle glow */
+/* Hover */
+
 .md-nav__link:hover {
   color: var(--retro-neon-green) !important;
-  background-color: rgba(57, 255, 20, 0.06); /* Reduced from 0.08 */
-  text-shadow: var(--glow-medium); /* Refined glow */
-  transform: translateX(2px);
+
+  background-color: rgba(92, 173, 92, 0.035);
+
+  text-shadow: none;
+
+  /* Removed transform */
+  transform: none;
 }
 
-/* Sidebar title */
 .md-nav__title {
-  background-color: var(--retro-soft-green);
+  background-color: #141d14;
+
   color: var(--retro-terminal-green);
-  font-weight: 700;
+
   border-bottom: 1px solid var(--retro-border-green);
+
   text-transform: uppercase;
+
   letter-spacing: 1px;
-  font-size: 0.75rem;
+
+  font-size: 0.74rem;
+
+  font-weight: 700;
 }
 
 /* ============================================
-   Code Blocks - Classic UNIX Terminal Style
-   ============================================ */
-
-/* Code block container */
-.md-typeset pre {
-  background-color: var(--retro-code-black) !important;
-  border: 1px solid var(--retro-border-green);
-  border-left: 3px solid var(--retro-terminal-green);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-  padding: 1rem;
-  margin: 1.5rem 0;
-}
-
-/* Code text */
-.md-typeset code {
-  background-color: var(--retro-code-black);
-  color: var(--retro-terminal-green);
-  font-family: 'Courier New', 'Consolas', 'Monaco', monospace;
-  font-size: 0.85rem;
-  border: 1px solid var(--retro-border-green);
-  padding: 0.2rem 0.4rem;
-}
-
-/* Inline code */
-.md-typeset p code,
-.md-typeset li code {
-  background-color: var(--retro-code-black);
-  color: var(--retro-terminal-green);
-  border: 1px solid var(--retro-border-green);
-  padding: 0.15rem 0.4rem;
-  font-weight: 500;
-}
-
-/* Syntax highlighting - terminal green theme */
-.highlight .hll { background-color: var(--retro-soft-green); }
-.highlight .c { color: var(--retro-medium-gray); font-style: italic; } /* Comment */
-.highlight .k { color: var(--retro-terminal-green); font-weight: bold; } /* Keyword */
-.highlight .o { color: var(--retro-terminal-green); } /* Operator */
-.highlight .n { color: var(--retro-light-gray); } /* Name */
-.highlight .s { color: #66ff66; } /* String */
-.highlight .nb { color: var(--retro-terminal-green); } /* Built-in */
-.highlight .nf { color: var(--retro-neon-green); font-weight: bold; } /* Function */
-
-/* Copy button styling */
-.md-clipboard {
-  color: var(--retro-terminal-green) !important;
-}
-
-.md-clipboard:hover {
-  color: var(--retro-neon-green) !important;
-  background-color: rgba(57, 255, 20, 0.1);
-}
-
-/* ============================================
-   Header - Minimal Dark Design
+   Header
    ============================================ */
 
 .md-header {
   background-color: var(--retro-black);
+
   border-bottom: 1px solid var(--retro-border-green);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+
+  box-shadow: none;
 }
 
 .md-header__title {
   color: var(--retro-terminal-green);
+
   font-family: 'Courier New', monospace;
+
   font-weight: 700;
+
   text-transform: uppercase;
+
   letter-spacing: 2px;
+
   font-size: 0.9rem;
+
+  text-shadow: none;
 }
 
-/* Search bar */
+/* ============================================
+   Search
+   ============================================ */
+
 .md-search__input {
   background-color: var(--retro-code-black);
+
   border: 1px solid var(--retro-border-green);
+
   color: var(--retro-light-gray);
 }
 
 .md-search__input:focus {
   border-color: var(--retro-terminal-green);
-  box-shadow: var(--glow-focus); /* Refined glow */
+
+  box-shadow: var(--glow-focus);
 }
 
 /* ============================================
-   Links and Interactive Elements
+   Code Blocks
+   ============================================ */
+
+.md-typeset pre {
+  background-color: var(--retro-code-black) !important;
+
+  border: 1px solid var(--retro-border-green);
+
+  border-left: 2px solid var(--retro-terminal-green);
+
+  box-shadow: none;
+
+  padding: 1rem;
+
+  margin: 1.5rem 0;
+}
+
+.md-typeset code {
+  background-color: var(--retro-code-black);
+
+  color: var(--retro-terminal-green);
+
+  font-family: 'Courier New', monospace;
+
+  font-size: 0.84rem;
+
+  border: 1px solid var(--retro-border-green);
+
+  padding: 0.18rem 0.38rem;
+}
+
+.md-typeset p code,
+.md-typeset li code {
+  background-color: var(--retro-code-black);
+
+  color: var(--retro-terminal-green);
+
+  border: 1px solid var(--retro-border-green);
+
+  padding: 0.15rem 0.35rem;
+
+  font-weight: 500;
+}
+
+/* Syntax Highlighting */
+
+.highlight .hll {
+  background-color: rgba(92, 173, 92, 0.08);
+}
+
+.highlight .c {
+  color: var(--retro-medium-gray);
+  font-style: italic;
+}
+
+.highlight .k {
+  color: var(--retro-terminal-green);
+  font-weight: bold;
+}
+
+.highlight .o {
+  color: var(--retro-terminal-green);
+}
+
+.highlight .n {
+  color: var(--retro-light-gray);
+}
+
+.highlight .s {
+  color: #8bd68b;
+}
+
+.highlight .nb {
+  color: var(--retro-terminal-green);
+}
+
+.highlight .nf {
+  color: #7fc97f;
+  font-weight: 600;
+}
+
+/* ============================================
+   Links
    ============================================ */
 
 .md-typeset a {
   color: var(--retro-terminal-green);
+
   text-decoration: none;
-  border-bottom: 1px dotted var(--retro-terminal-green);
-  transition: all 0.2s ease;
+
+  border-bottom: 1px dotted rgba(92, 173, 92, 0.45);
+
+  transition: color 0.18s ease,
+              border-color 0.18s ease;
 }
 
 .md-typeset a:hover {
   color: var(--retro-neon-green);
-  border-bottom: 1px solid var(--retro-neon-green);
-  text-shadow: 0 0 3px rgba(57, 255, 20, 0.3); /* Refined glow - reduced from 4px/0.4 */
+
+  border-bottom: 1px solid rgba(114, 199, 114, 0.6);
+
+  text-shadow: none;
 }
 
 /* ============================================
-   Tables - Technical Grid Style
+   Tables
    ============================================ */
 
 .md-typeset table:not([class]) {
   border: 1px solid var(--retro-border-green);
+
   background-color: var(--retro-black);
 }
 
 .md-typeset table:not([class]) th {
-  background-color: var(--retro-dark-green);
+  background-color: #141d14;
+
   color: var(--retro-terminal-green);
-  border-bottom: 2px solid var(--retro-terminal-green);
+
+  border-bottom: 1px solid var(--retro-border-green);
+
   font-family: 'Courier New', monospace;
+
   text-transform: uppercase;
-  font-size: 0.8rem;
+
+  font-size: 0.78rem;
+
   letter-spacing: 1px;
 }
 
 .md-typeset table:not([class]) td {
   border: 1px solid var(--retro-border-green);
+
   color: var(--retro-light-gray);
 }
 
 .md-typeset table:not([class]) tr:hover {
-  background-color: rgba(51, 255, 51, 0.05);
+  background-color: rgba(92, 173, 92, 0.03);
 }
 
 /* ============================================
-   Admonitions - Terminal Alert Style
+   Admonitions
    ============================================ */
 
 .md-typeset .admonition {
-  border-left: 3px solid var(--retro-terminal-green);
-  background-color: rgba(26, 47, 26, 0.5);
+  border-left: 2px solid var(--retro-terminal-green);
+
+  background-color: rgba(20, 29, 20, 0.55);
+
   border-radius: 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+
+  box-shadow: none;
 }
 
 .md-typeset .admonition-title {
-  background-color: var(--retro-dark-green);
+  background-color: #141d14;
+
   color: var(--retro-terminal-green);
+
   font-family: 'Courier New', monospace;
+
   font-weight: 700;
+
   text-transform: uppercase;
-  font-size: 0.8rem;
+
+  font-size: 0.78rem;
+
   letter-spacing: 1px;
 }
 
-/* Warning admonition */
 .md-typeset .admonition.warning {
-  border-left-color: #ffaa00;
+  border-left-color: #c89a2b;
 }
 
 .md-typeset .admonition.warning > .admonition-title {
-  background-color: rgba(255, 170, 0, 0.1);
-  color: #ffaa00;
+  background-color: rgba(200, 154, 43, 0.08);
+
+  color: #c89a2b;
 }
 
 /* ============================================
-   Footer - Minimal Dark
+   Buttons
    ============================================ */
 
-.md-footer {
-  background-color: var(--retro-black);
-  border-top: 1px solid var(--retro-border-green);
-  color: var(--retro-medium-gray);
+.md-typeset .md-button {
+  background-color: #141d14;
+
+  color: var(--retro-terminal-green);
+
+  border: 1px solid var(--retro-border-green);
+
+  font-family: 'Courier New', monospace;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+
+  transition: background-color 0.18s ease,
+              color 0.18s ease,
+              border-color 0.18s ease;
 }
 
-.md-footer-meta {
-  background-color: var(--retro-black);
+.md-typeset .md-button:hover {
+  background-color: #182418;
+
+  color: var(--retro-neon-green);
+
+  border-color: rgba(114, 199, 114, 0.3);
+
+  box-shadow: none;
+
+  transform: none;
 }
 
 /* ============================================
-   Scrollbar - Terminal Style
+   Tabs
+   ============================================ */
+
+.md-tabs {
+  background-color: var(--retro-black);
+
+  border-bottom: 1px solid var(--retro-border-green);
+}
+
+.md-tabs__link {
+  color: var(--retro-light-gray);
+
+  font-family: 'Courier New', monospace;
+
+  text-transform: uppercase;
+
+  font-size: 0.74rem;
+
+  letter-spacing: 1px;
+}
+
+.md-tabs__link--active {
+  color: var(--retro-terminal-green);
+
+  border-bottom: 1px solid var(--retro-terminal-green);
+}
+
+.md-tabs__link:hover {
+  color: var(--retro-neon-green);
+
+  text-shadow: none;
+}
+
+/* ============================================
+   Blockquotes
+   ============================================ */
+
+.md-typeset blockquote {
+  border-left: 2px solid var(--retro-terminal-green);
+
+  background-color: rgba(20, 29, 20, 0.35);
+
+  color: var(--retro-light-gray);
+
+  padding: 1rem 1.4rem;
+
+  font-style: italic;
+}
+
+/* ============================================
+   Lists
+   ============================================ */
+
+.md-typeset ul li::marker,
+.md-typeset ol li::marker {
+  color: var(--retro-terminal-green);
+}
+
+/* ============================================
+   Horizontal Rules
+   ============================================ */
+
+.md-typeset hr {
+  border-bottom: 1px solid var(--retro-border-green);
+
+  margin: 2rem 0;
+}
+
+/* ============================================
+   Scrollbar
    ============================================ */
 
 ::-webkit-scrollbar {
@@ -341,105 +547,111 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--retro-dark-green);
+  background: #1a261a;
+
   border: 1px solid var(--retro-border-green);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--retro-soft-green);
-  box-shadow: 0 0 3px rgba(51, 255, 51, 0.25); /* Refined glow */
+  background: #243324;
+
+  box-shadow: none;
 }
 
 /* ============================================
-   Buttons and Controls
+   Footer
    ============================================ */
 
-.md-typeset .md-button {
-  background-color: var(--retro-dark-green);
-  color: var(--retro-terminal-green);
-  border: 1px solid var(--retro-terminal-green);
-  font-family: 'Courier New', monospace;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: all 0.2s ease;
-}
-
-.md-typeset .md-button:hover {
-  background-color: var(--retro-soft-green);
-  color: var(--retro-neon-green);
-  box-shadow: 0 0 6px rgba(51, 255, 51, 0.25); /* Refined glow */
-  transform: translateY(-1px);
-}
-
-/* ============================================
-   Navigation Tabs
-   ============================================ */
-
-.md-tabs {
+.md-footer {
   background-color: var(--retro-black);
-  border-bottom: 1px solid var(--retro-border-green);
+
+  border-top: 1px solid var(--retro-border-green);
+
+  color: var(--retro-medium-gray);
 }
 
-.md-tabs__link {
-  color: var(--retro-light-gray);
+.md-footer-meta {
+  background-color: var(--retro-black);
+}
+
+/* Footer Copyright Text */
+.md-footer-copyright {
   font-family: 'Courier New', monospace;
-  text-transform: uppercase;
-  font-size: 0.75rem;
-  letter-spacing: 1px;
+  font-size: 0.7rem;
+  color: rgba(138, 138, 138, 0.8);
+  letter-spacing: 0.2px;
+  opacity: 0.85;
+  padding: 1rem 0.8rem !important;
 }
 
-.md-tabs__link--active {
-  color: var(--retro-terminal-green);
-  border-bottom: 2px solid var(--retro-terminal-green);
+/* Footer Social Icons */
+.md-footer__inner .md-social {
+  display: flex;
+  gap: 0.8rem;
 }
 
-.md-tabs__link:hover {
-  color: var(--retro-neon-green);
-  text-shadow: 0 0 3px rgba(57, 255, 20, 0.25); /* Refined glow */
+.md-social__link {
+  color: rgba(79, 191, 79, 0.7) !important;
+  transition: color 0.2s ease;
+}
+
+.md-social__link:hover {
+  color: rgba(114, 199, 114, 0.9) !important;
+}
+
+.md-social__link svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  fill: currentColor;
+}
+
+/* Responsive Footer */
+@media screen and (max-width: 44.9375em) {
+  .md-footer-copyright {
+    font-size: 0.66rem;
+  }
+  
+  .md-social__link svg {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
 }
 
 /* ============================================
-   Content Area Refinements
+   Content Spacing & Alignment
    ============================================ */
 
 .md-content__inner {
   padding: 2rem 1.5rem;
 }
 
-/* Horizontal rules */
-.md-typeset hr {
-  border-bottom: 1px solid var(--retro-border-green);
-  margin: 2rem 0;
-}
-
-/* Blockquotes */
-.md-typeset blockquote {
-  border-left: 3px solid var(--retro-terminal-green);
-  background-color: rgba(26, 47, 26, 0.3);
-  color: var(--retro-light-gray);
-  padding: 1rem 1.5rem;
-  font-style: italic;
-}
-
-/* Lists */
-.md-typeset ul li::marker,
-.md-typeset ol li::marker {
-  color: var(--retro-terminal-green);
+/* Align content with TOC sidebar on larger screens */
+@media screen and (min-width: 76.25em) {
+  .md-content__inner {
+    padding-right: 1.5rem;
+    padding-left: 2rem;
+  }
+  
+  /* Ensure content doesn't overflow into TOC */
+  .md-sidebar--secondary {
+    margin-left: 1rem;
+  }
 }
 
 /* ============================================
-   Responsive Adjustments
+   Responsive
    ============================================ */
 
 @media screen and (max-width: 76.1875em) {
   .md-nav--primary .md-nav__title {
-    background-color: var(--retro-dark-green);
+    background-color: #141d14;
+
     color: var(--retro-terminal-green);
   }
 }
 
 /* ============================================
-   Print Styles - Maintain Readability
+   Print
    ============================================ */
 
 @media print {
@@ -447,7 +659,7 @@ body {
     background-color: white !important;
     color: black !important;
   }
-  
+
   .md-typeset h1,
   .md-typeset h2,
   .md-typeset h3 {
@@ -455,5 +667,3 @@ body {
     text-shadow: none !important;
   }
 }
-
-/* Made with Bob */

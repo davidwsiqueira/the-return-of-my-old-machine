@@ -32,12 +32,8 @@ theme:
 extra_css:
   - stylesheets/extra.css
 
-# Repository
-repo_name: The Return of My Old Machine
-repo_url: https://github.com/your-username/old-machine-restoration
-
 # Copyright
-copyright: Copyright &copy; 2026 - Retro Linux Engineering Workstation Restoration
+copyright: Maintained by David Willian de Siqueira
 
 # Extensions
 markdown_extensions:
@@ -84,12 +80,13 @@ nav:
 
 # Extra
 extra:
+  generator: false
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/your-username
-    - icon: fontawesome/brands/twitter
-      link: https://twitter.com/your-username
+      link: https://github.com/davidwsiqueira/the-return-of-my-old-machine
+      name: GitHub
     - icon: fontawesome/brands/linkedin
-      link: https://linkedin.com/in/your-username
+      link: https://www.linkedin.com/in/david-willian-siqueira/
+      name: LinkedIn
 
 # Made with Bob
