@@ -148,15 +148,26 @@ body {
 }
 
 .md-nav {
-  color: var(--retro-light-gray);
+  color: var(--retro-medium-gray);
   font-family: 'Roboto Mono', monospace;
-  font-size: 0.84rem;
+  font-size: 0.80rem;
 }
 
 .md-nav__link {
-  color: var(--retro-light-gray) !important;
+  color: var(--retro-medium-gray) !important;
   transition: color 0.18s ease,
               background-color 0.18s ease;
+}
+
+/* Table of Contents (right sidebar) */
+.md-nav--secondary .md-nav__link {
+  color: var(--retro-medium-gray) !important;
+  font-size: 0.78rem;
+}
+
+/* TOC title */
+.md-nav--secondary .md-nav__title {
+  color: var(--retro-terminal-green) !important;
 }
 
 /* Active item */
@@ -434,14 +445,54 @@ body {
   letter-spacing: 1px;
 }
 
+/* Warning - Very muted amber/orange (matching green subtlety) */
 .md-typeset .admonition.warning {
-  border-left-color: #c89a2b;
+  border-left-color: #6b5420;
+  background-color: rgba(107, 84, 32, 0.05);
 }
 
 .md-typeset .admonition.warning > .admonition-title {
-  background-color: rgba(200, 154, 43, 0.08);
+  background-color: rgba(107, 84, 32, 0.08);
+  color: #8a6b28;
+}
 
-  color: #c89a2b;
+/* Info - Very muted blue (matching green subtlety) */
+.md-typeset .admonition.info,
+.md-typeset .admonition.note {
+  border-left-color: #2a5468;
+  background-color: rgba(42, 84, 104, 0.05);
+}
+
+.md-typeset .admonition.info > .admonition-title,
+.md-typeset .admonition.note > .admonition-title {
+  background-color: rgba(42, 84, 104, 0.08);
+  color: #3a6b8a;
+}
+
+/* Danger/Error - Very muted red (matching green subtlety) */
+.md-typeset .admonition.danger,
+.md-typeset .admonition.error {
+  border-left-color: #682a2a;
+  background-color: rgba(104, 42, 42, 0.05);
+}
+
+.md-typeset .admonition.danger > .admonition-title,
+.md-typeset .admonition.error > .admonition-title {
+  background-color: rgba(104, 42, 42, 0.08);
+  color: #8a3a3a;
+}
+
+/* Success/Tip - Keep green consistent */
+.md-typeset .admonition.success,
+.md-typeset .admonition.tip {
+  border-left-color: var(--retro-terminal-green);
+  background-color: rgba(66, 168, 66, 0.05);
+}
+
+.md-typeset .admonition.success > .admonition-title,
+.md-typeset .admonition.tip > .admonition-title {
+  background-color: rgba(66, 168, 66, 0.08);
+  color: var(--retro-terminal-green);
 }
 
 /* ============================================
