@@ -39,14 +39,21 @@ theme:
     - content.code.copy
     - content.code.annotate
     - content.tabs.link
-  logo: assets/logo.svg
-  favicon: assets/logo.svg
+  logo: assets/logo-green.svg
+  favicon: assets/logo-green.svg
   icon:
     repo: fontawesome/brands/github
 
-# Custom CSS - Industrial UNIX Archive Aesthetic
+# Custom CSS - TROMOM Multi-Theme Architecture
 extra_css:
-  - stylesheets/extra.css
+  - stylesheets/base.css
+  - stylesheets/tromom-green.css
+  - stylesheets/tromom-cyan.css
+  - stylesheets/tromom-white.css
+
+# Custom JavaScript - Theme Selector
+extra_javascript:
+  - javascripts/theme-toggle.js
 
 # Plugins
 plugins:
@@ -155,15 +162,5 @@ nav:
     - Useful Links: resources/useful-links.md
     - References: resources/references.md
 
-# Extra Configuration
-extra:
-  generator: false
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/davidwsiqueira/the-return-of-my-old-machine
-      name: GitHub Repository
-    - icon: fontawesome/brands/linkedin
-      link: https://www.linkedin.com/in/david-willian-siqueira/
-      name: LinkedIn Profile
 
-# Made with Bob
+

@@ -1,0 +1,80 @@
+/* ============================================
+   TROMOM Cyan Theme
+   IBM Mainframe Blue CRT Terminal
+   Corporate Data Center Aesthetic
+   ============================================ */
+
+[data-theme="cyan"] {
+  /* ============================================
+     Color Palette - Authentic IBM Blue Phosphor
+     ============================================ */
+
+  --retro-black: #0f0f11;
+  --retro-matte-black: #111113;
+  
+  /* Primary accent colors - IBM Cyan Phosphor */
+  --retro-primary: #4a9fb8;           /* Authentic IBM cyan phosphor */
+  --retro-primary-bright: #5cb3cc;    /* Brighter cyan for hover states */
+  
+  /* Background tints - Black with subtle blue tint */
+  --retro-bg-dark: #111113;           /* Black with very subtle blue tint */
+  --retro-bg-soft: #161618;           /* Soft black with blue tint */
+  --retro-bg-medium: #131315;         /* Medium black with blue tint */
+  --retro-bg-hover: #1a1a1c;          /* Hover state with blue tint */
+
+  /* Text colors - Cyan tinted */
+  --retro-text-primary: #c8d8dc;      /* Cyan-tinted light gray text */
+  --retro-text-secondary: #8a9ca1;    /* Cyan-tinted medium gray text */
+
+  /* Code background */
+  --retro-code-bg: #0c0c0e;           /* Very dark background with blue tint */
+
+  /* Borders - Cyan tinted */
+  --retro-border-primary: rgba(74, 159, 184, 0.18);       /* Subtle cyan border */
+  --retro-border-hover: rgba(92, 179, 204, 0.3);          /* Hover border */
+  --retro-border-dotted: rgba(74, 159, 184, 0.45);        /* Dotted border */
+  --retro-border-solid-hover: rgba(92, 179, 204, 0.6);    /* Solid hover border */
+
+  /* Subtle backgrounds - Cyan tinted */
+  --retro-bg-subtle: rgba(74, 159, 184, 0.05);            /* Very subtle background */
+  --retro-bg-very-subtle: rgba(74, 159, 184, 0.035);      /* Ultra subtle background */
+  --retro-bg-ultra-subtle: rgba(74, 159, 184, 0.03);      /* Minimal background */
+  --retro-bg-highlight: rgba(74, 159, 184, 0.08);         /* Highlight background */
+
+  /* Syntax highlighting - Cool cyan tones */
+  --syntax-string: #7bc4d9;           /* String color */
+  --syntax-function: #6ab3c9;         /* Function color */
+
+  /* Component-specific */
+  --admonition-bg: rgba(22, 22, 24, 0.55);                /* Admonition background */
+  --admonition-title-bg: rgba(74, 159, 184, 0.08);        /* Admonition title background */
+  --scrollbar-thumb: #161618;                              /* Scrollbar thumb */
+  --scrollbar-thumb-hover: #202022;                        /* Scrollbar thumb hover */
+  --social-icon: rgba(74, 159, 184, 0.7);                 /* Social icon color */
+  --social-icon-hover: rgba(92, 179, 204, 0.9);           /* Social icon hover */
+
+  /* Glow effects - Restrained cyan phosphor glow */
+  --glow-subtle: 0 0 1px rgba(74, 159, 184, 0.08);
+  --glow-soft: 0 0 2px rgba(74, 159, 184, 0.12);
+  --glow-medium: 0 0 4px rgba(74, 159, 184, 0.14);
+  --glow-focus: 0 0 6px rgba(74, 159, 184, 0.18);
+}
+
+/* ============================================
+   Cyan Theme CRT Texture
+   ============================================ */
+
+[data-theme="cyan"] body {
+  /* Subtle CRT scanline texture for cyan */
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 3px,
+      rgba(255,255,255,0.010) 3px,
+      rgba(255,255,255,0.010) 4px
+    ) !important;
+}
+
+
+/* Made with Bob */
