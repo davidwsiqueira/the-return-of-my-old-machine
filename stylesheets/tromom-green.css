@@ -1,0 +1,80 @@
+/* ============================================
+   TROMOM Green Theme
+   Phosphor Green CRT Terminal Aesthetic
+   Original Green Theme - Preserved Exactly
+   ============================================ */
+
+[data-theme="green"],
+:root {
+  /* ============================================
+     Color Palette - Authentic Vintage CRT
+     ============================================ */
+
+  --retro-black: #0b0d0b;
+  --retro-matte-black: #0d0f0d;
+  
+  /* Primary accent colors - Phosphor Green */
+  --retro-primary: #42a842;           /* Vintage phosphor green (muted, atmospheric) */
+  --retro-primary-bright: #58b858;    /* Brighter green for hover states */
+  
+  /* Background tints - Dark Green */
+  --retro-bg-dark: #111811;           /* Dark green background */
+  --retro-bg-soft: #1a261a;           /* Soft green background */
+  --retro-bg-medium: #141d14;         /* Medium green background */
+  --retro-bg-hover: #182418;          /* Hover state background */
+
+  /* Text colors */
+  --retro-text-primary: #d6d6d6;      /* Light gray text */
+  --retro-text-secondary: #8a8a8a;    /* Medium gray text */
+
+  /* Code background */
+  --retro-code-bg: #0a0d0a;           /* Very dark background for code */
+
+  /* Borders - Green tinted */
+  --retro-border-primary: rgba(66, 168, 66, 0.18);        /* Subtle green border */
+  --retro-border-hover: rgba(114, 199, 114, 0.3);         /* Hover border */
+  --retro-border-dotted: rgba(92, 173, 92, 0.45);         /* Dotted border */
+  --retro-border-solid-hover: rgba(114, 199, 114, 0.6);   /* Solid hover border */
+
+  /* Subtle backgrounds - Green tinted */
+  --retro-bg-subtle: rgba(92, 173, 92, 0.05);             /* Very subtle background */
+  --retro-bg-very-subtle: rgba(92, 173, 92, 0.035);       /* Ultra subtle background */
+  --retro-bg-ultra-subtle: rgba(92, 173, 92, 0.03);       /* Minimal background */
+  --retro-bg-highlight: rgba(92, 173, 92, 0.08);          /* Highlight background */
+
+  /* Syntax highlighting */
+  --syntax-string: #8bd68b;           /* String color */
+  --syntax-function: #7fc97f;         /* Function color */
+
+  /* Component-specific */
+  --admonition-bg: rgba(20, 29, 20, 0.55);                /* Admonition background */
+  --admonition-title-bg: rgba(66, 168, 66, 0.08);         /* Admonition title background */
+  --scrollbar-thumb: #1a261a;                              /* Scrollbar thumb */
+  --scrollbar-thumb-hover: #243324;                        /* Scrollbar thumb hover */
+  --social-icon: rgba(79, 191, 79, 0.7);                  /* Social icon color */
+  --social-icon-hover: rgba(114, 199, 114, 0.9);          /* Social icon hover */
+
+  /* Glow effects - Very restrained */
+  --glow-subtle: 0 0 1px rgba(66, 168, 66, 0.08);
+  --glow-soft: 0 0 2px rgba(66, 168, 66, 0.12);
+  --glow-medium: 0 0 4px rgba(66, 168, 66, 0.14);
+  --glow-focus: 0 0 6px rgba(66, 168, 66, 0.18);
+}
+
+/* ============================================
+   Green Theme CRT Texture
+   ============================================ */
+
+[data-theme="green"] body,
+body {
+  /* Extremely subtle CRT texture */
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 3px,
+      rgba(255,255,255,0.008) 3px,
+      rgba(255,255,255,0.008) 4px
+    );
+}
+

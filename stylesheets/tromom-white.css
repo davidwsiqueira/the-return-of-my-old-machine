@@ -1,0 +1,80 @@
+/* ============================================
+   TROMOM White Theme
+   VT100 Monochromatic Terminal
+   Pure UNIX Minimalist Aesthetic
+   ============================================ */
+
+[data-theme="white"] {
+  /* ============================================
+     Color Palette - VT100 White Phosphor
+     ============================================ */
+
+  --retro-black: #121212;
+  --retro-matte-black: #151515;
+  
+  /* Primary accent colors - White Phosphor */
+  --retro-primary: #e8e8e8;           /* VT100 white phosphor - brighter */
+  --retro-primary-bright: #ffffff;    /* Pure white for hover states */
+  
+  /* Background tints - Softened Black */
+  --retro-bg-dark: #151515;           /* Softened black background */
+  --retro-bg-soft: #1a1a1a;           /* Soft black background */
+  --retro-bg-medium: #181818;         /* Medium black background */
+  --retro-bg-hover: #1f1f1f;          /* Hover state background */
+
+  /* Text colors - Monochromatic (Higher contrast) */
+  --retro-text-primary: #d4d4d4;      /* Brighter light gray text */
+  --retro-text-secondary: #9a9a9a;    /* Lighter medium gray text */
+
+  /* Code background */
+  --retro-code-bg: #0d0d0d;           /* Softened dark background for code */
+
+  /* Borders - White tinted (Brighter) */
+  --retro-border-primary: rgba(232, 232, 232, 0.18);      /* Subtle white border */
+  --retro-border-hover: rgba(255, 255, 255, 0.3);         /* Hover border */
+  --retro-border-dotted: rgba(232, 232, 232, 0.45);       /* Dotted border */
+  --retro-border-solid-hover: rgba(255, 255, 255, 0.6);   /* Solid hover border */
+
+  /* Subtle backgrounds - White tinted (Brighter) */
+  --retro-bg-subtle: rgba(232, 232, 232, 0.05);           /* Very subtle background */
+  --retro-bg-very-subtle: rgba(232, 232, 232, 0.035);     /* Ultra subtle background */
+  --retro-bg-ultra-subtle: rgba(232, 232, 232, 0.03);     /* Minimal background */
+  --retro-bg-highlight: rgba(232, 232, 232, 0.08);        /* Highlight background */
+
+  /* Syntax highlighting - Monochromatic tones (Brighter) */
+  --syntax-string: #c8c8c8;           /* String color */
+  --syntax-function: #d4d4d4;         /* Function color */
+
+  /* Component-specific (Brighter) */
+  --admonition-bg: rgba(26, 26, 26, 0.55);                /* Admonition background */
+  --admonition-title-bg: rgba(232, 232, 232, 0.08);       /* Admonition title background */
+  --scrollbar-thumb: #1a1a1a;                              /* Scrollbar thumb */
+  --scrollbar-thumb-hover: #2a2a2a;                        /* Scrollbar thumb hover */
+  --social-icon: rgba(232, 232, 232, 0.7);                /* Social icon color */
+  --social-icon-hover: rgba(255, 255, 255, 0.9);          /* Social icon hover */
+
+  /* Glow effects - Subtle white phosphor glow (Brighter) */
+  --glow-subtle: 0 0 1px rgba(232, 232, 232, 0.08);
+  --glow-soft: 0 0 2px rgba(232, 232, 232, 0.12);
+  --glow-medium: 0 0 4px rgba(232, 232, 232, 0.14);
+  --glow-focus: 0 0 6px rgba(232, 232, 232, 0.18);
+}
+
+/* ============================================
+   White Theme CRT Texture
+   ============================================ */
+
+[data-theme="white"] body {
+  /* Very subtle CRT scanline texture for white */
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 3px,
+      rgba(255,255,255,0.006) 3px,
+      rgba(255,255,255,0.006) 4px
+    ) !important;
+}
+
+
+/* Made with Bob */

@@ -1,0 +1,797 @@
+/* ============================================
+   TROMOM Base Stylesheet
+   The Return of My Old Machine
+   Industrial UNIX Archive Aesthetic
+   ============================================ */
+
+/* ============================================
+   Semantic Color Variables
+   These are defined by theme-specific files
+   ============================================ */
+
+:root {
+  /* Primary accent colors */
+  --retro-primary: inherit;
+  --retro-primary-soft: inherit;
+  --retro-primary-bright: inherit;
+  
+  /* Background colors */
+  --retro-bg: inherit;
+  --retro-bg-elevated: inherit;
+  --retro-bg-soft: inherit;
+  --retro-code-bg: inherit;
+  
+  /* Text colors */
+  --retro-text: inherit;
+  --retro-text-muted: inherit;
+  
+  /* Border colors */
+  --retro-border: inherit;
+  --retro-border-hover: inherit;
+  --retro-border-dotted: inherit;
+  --retro-border-solid-hover: inherit;
+  
+  /* Subtle backgrounds */
+  --retro-bg-subtle: inherit;
+  --retro-bg-very-subtle: inherit;
+  --retro-bg-ultra-subtle: inherit;
+  --retro-bg-highlight: inherit;
+  
+  /* Syntax highlighting */
+  --syntax-string: inherit;
+  --syntax-function: inherit;
+  
+  /* Component-specific */
+  --admonition-bg: inherit;
+  --admonition-title-bg: inherit;
+  --scrollbar-thumb: inherit;
+  --scrollbar-thumb-hover: inherit;
+  --social-color: inherit;
+  --social-color-hover: inherit;
+  
+  /* Glow effects */
+  --glow-subtle: inherit;
+  --glow-soft: inherit;
+  --glow-medium: inherit;
+  --glow-focus: inherit;
+}
+
+/* ============================================
+   Global Theme Overrides
+   ============================================ */
+
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color: var(--retro-matte-black);
+  --md-default-fg-color: var(--retro-text-primary);
+  --md-code-bg-color: var(--retro-code-bg);
+  --md-code-fg-color: var(--retro-primary);
+  --md-primary-fg-color: var(--retro-bg-dark);
+  --md-accent-fg-color: var(--retro-primary);
+}
+
+/* ============================================
+   Body & Main Container
+   ============================================ */
+
+body {
+  background-color: var(--retro-matte-black) !important;
+  color: var(--retro-text-primary) !important;
+}
+
+.md-main {
+  background-color: transparent;
+}
+
+.md-content {
+  color: var(--retro-text-primary);
+}
+
+/* ============================================
+   Typography
+   ============================================ */
+
+.md-typeset {
+  font-family: 'Roboto Mono', 'Courier New', monospace;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: var(--retro-text-primary);
+}
+
+/* Headings */
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  color: var(--retro-primary);
+  font-family: 'Courier New', 'Consolas', monospace;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-shadow: none;
+  margin-top: 1.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.md-typeset h1 {
+  font-size: 1.4rem;
+  border-bottom: 1px solid var(--retro-border-primary);
+  padding-bottom: 0.5rem;
+  margin-top: 0;
+}
+
+.md-typeset h2 {
+  font-size: 1.15rem;
+}
+
+.md-typeset h3 {
+  font-size: 1.05rem;
+}
+
+.md-typeset h4 {
+  font-size: 0.98rem;
+}
+
+.md-typeset h5,
+.md-typeset h6 {
+  font-size: 0.92rem;
+}
+
+.md-typeset p {
+  color: var(--retro-text-primary);
+  margin-bottom: 1.25em;
+}
+
+/* ============================================
+   Sidebar
+   ============================================ */
+
+.md-sidebar {
+  background-color: var(--retro-bg-dark) !important;
+  border-right: 1px solid var(--retro-border-primary);
+}
+
+.md-sidebar--primary {
+  background: var(--retro-bg-dark);
+}
+
+.md-nav {
+  color: var(--retro-text-secondary);
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.80rem;
+}
+
+.md-nav__link {
+  color: var(--retro-text-secondary) !important;
+  transition: color 0.18s ease,
+              background-color 0.18s ease;
+}
+
+/* Table of Contents (right sidebar) */
+.md-nav--secondary .md-nav__link {
+  color: var(--retro-text-secondary) !important;
+  font-size: 0.78rem;
+}
+
+/* TOC title */
+.md-nav--secondary .md-nav__title {
+  color: var(--retro-primary) !important;
+}
+
+/* Active item */
+
+.md-nav__link--active {
+  color: var(--retro-primary) !important;
+  font-weight: 600;
+  background-color: var(--retro-bg-subtle);
+  border-left: 2px solid var(--retro-primary);
+  padding-left: 0.75rem;
+  text-shadow: none;
+}
+
+/* Hover */
+
+.md-nav__link:hover {
+  color: var(--retro-primary-bright) !important;
+  background-color: var(--retro-bg-very-subtle);
+  text-shadow: none;
+  transform: none;
+}
+
+.md-nav__title {
+  background-color: var(--retro-bg-medium);
+  color: var(--retro-primary);
+  border-bottom: 1px solid var(--retro-border-primary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+/* ============================================
+   Header
+   ============================================ */
+
+.md-header {
+  background-color: var(--retro-matte-black);
+  border-bottom: 1px solid var(--retro-border-primary);
+  box-shadow: none;
+}
+
+.md-header__title {
+  color: var(--retro-primary);
+  font-family: 'Courier New', monospace;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+  text-shadow: none;
+}
+
+/* ============================================
+   Theme Selector Dropdown
+   ============================================ */
+
+.theme-selector {
+  position: relative;
+  margin-left: 1rem;
+}
+
+.theme-dropdown-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  background-color: var(--retro-bg-medium);
+  border: 1px solid var(--retro-border-primary);
+  color: var(--retro-primary);
+  font-family: 'Courier New', monospace;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  border-radius: 0;
+  white-space: nowrap;
+}
+
+.theme-dropdown-btn:hover {
+  background-color: var(--retro-bg-dark);
+  border-color: var(--retro-border-hover);
+  color: var(--retro-primary-bright);
+}
+
+.theme-icon {
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+.theme-label {
+  font-size: 0.7rem;
+}
+
+.dropdown-arrow {
+  font-size: 0.6rem;
+  transition: transform 0.2s ease;
+}
+
+.theme-dropdown-btn:hover .dropdown-arrow {
+  transform: translateY(1px);
+}
+
+/* Dropdown Menu */
+.theme-dropdown {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  min-width: 200px;
+  background-color: var(--retro-bg-dark);
+  border: 1px solid var(--retro-border-primary);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+  z-index: 1000;
+}
+
+.theme-dropdown.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Theme Options */
+.theme-option {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid var(--retro-border-primary);
+  color: var(--retro-text-secondary);
+  font-family: 'Courier New', monospace;
+  font-size: 0.75rem;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.theme-option:last-child {
+  border-bottom: none;
+}
+
+.theme-option:hover {
+  background-color: var(--retro-bg-very-subtle);
+  color: var(--retro-primary-bright);
+}
+
+.theme-option.active {
+  background-color: var(--retro-bg-subtle);
+  color: var(--retro-primary);
+  font-weight: 600;
+}
+
+/* Theme Color Dots */
+.theme-dot {
+  font-size: 0.9rem;
+  line-height: 1;
+  min-width: 1rem;
+}
+
+.theme-dot.green {
+  color: #42a842;
+}
+
+.theme-dot.cyan {
+  color: #4a9fb8;
+}
+
+.theme-dot.white {
+  color: #e8e8e8;
+}
+
+.theme-name {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  flex: 1;
+}
+
+.theme-desc {
+  font-size: 0.65rem;
+  color: var(--retro-text-secondary);
+  opacity: 0.7;
+  font-style: italic;
+}
+
+.theme-option:hover .theme-desc {
+  opacity: 1;
+}
+
+/* ============================================
+   Search
+   ============================================ */
+
+.md-search__input {
+  background-color: var(--retro-code-bg);
+  border: 1px solid var(--retro-border-primary);
+  color: var(--retro-text-primary);
+}
+
+.md-search__input::placeholder {
+  color: var(--retro-text-primary);
+  opacity: 0.7;
+}
+
+.md-search__input:focus {
+  border-color: var(--retro-primary);
+  box-shadow: var(--glow-focus);
+}
+
+/* Search icon color */
+.md-search__icon {
+  color: var(--retro-text-primary);
+}
+
+.md-search__icon svg {
+  fill: var(--retro-text-primary);
+}
+
+/* ============================================
+   Code Blocks
+   ============================================ */
+
+.md-typeset pre {
+  background-color: var(--retro-code-bg) !important;
+  border: 1px solid var(--retro-border-primary);
+  border-left: 2px solid var(--retro-primary);
+  box-shadow: none;
+  padding: 1rem;
+  margin: 1.5rem 0;
+}
+
+.md-typeset code {
+  background-color: var(--retro-code-bg);
+  color: var(--retro-primary);
+  font-family: 'Courier New', monospace;
+  font-size: 0.84rem;
+  border: 1px solid var(--retro-border-primary);
+  padding: 0.18rem 0.38rem;
+}
+
+.md-typeset p code,
+.md-typeset li code {
+  background-color: var(--retro-code-bg);
+  color: var(--retro-primary);
+  border: 1px solid var(--retro-border-primary);
+  padding: 0.15rem 0.35rem;
+  font-weight: 500;
+}
+
+/* Syntax Highlighting */
+
+.highlight .hll {
+  background-color: var(--retro-bg-highlight);
+}
+
+.highlight .c {
+  color: var(--retro-text-secondary);
+  font-style: italic;
+}
+
+.highlight .k {
+  color: var(--retro-primary);
+  font-weight: bold;
+}
+
+.highlight .o {
+  color: var(--retro-primary);
+}
+
+.highlight .n {
+  color: var(--retro-text-primary);
+}
+
+.highlight .s {
+  color: var(--syntax-string);
+}
+
+.highlight .nb {
+  color: var(--retro-primary);
+}
+
+.highlight .nf {
+  color: var(--syntax-function);
+  font-weight: 600;
+}
+
+/* ============================================
+   Links
+   ============================================ */
+
+.md-typeset a {
+  color: var(--retro-primary);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--retro-border-dotted);
+  transition: color 0.18s ease,
+              border-color 0.18s ease;
+}
+
+.md-typeset a:hover {
+  color: var(--retro-primary-bright);
+  border-bottom: 1px solid var(--retro-border-solid-hover);
+  text-shadow: none;
+}
+
+/* ============================================
+   Tables
+   ============================================ */
+
+.md-typeset table:not([class]) {
+  border: 1px solid var(--retro-border-primary);
+  background-color: var(--retro-matte-black);
+}
+
+.md-typeset table:not([class]) th {
+  background-color: var(--retro-bg-medium);
+  color: var(--retro-primary);
+  border-bottom: 1px solid var(--retro-border-primary);
+  font-family: 'Courier New', monospace;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 1px;
+}
+
+.md-typeset table:not([class]) td {
+  border: 1px solid var(--retro-border-primary);
+  color: var(--retro-text-primary);
+}
+
+.md-typeset table:not([class]) tr:hover {
+  background-color: var(--retro-bg-ultra-subtle);
+}
+
+/* ============================================
+   Admonitions
+   ============================================ */
+
+.md-typeset .admonition {
+  border-left: 2px solid var(--retro-primary);
+  background-color: var(--admonition-bg);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.md-typeset .admonition-title {
+  background-color: var(--retro-bg-medium);
+  color: var(--retro-primary);
+  font-family: 'Courier New', monospace;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 1px;
+}
+
+/* Warning - Very muted amber/orange */
+.md-typeset .admonition.warning {
+  border-left-color: #6b5420;
+  background-color: rgba(107, 84, 32, 0.05);
+}
+
+.md-typeset .admonition.warning > .admonition-title {
+  background-color: rgba(107, 84, 32, 0.08);
+  color: #8a6b28;
+}
+
+/* Info - Very muted blue */
+.md-typeset .admonition.info,
+.md-typeset .admonition.note {
+  border-left-color: #2a5468;
+  background-color: rgba(42, 84, 104, 0.05);
+}
+
+.md-typeset .admonition.info > .admonition-title,
+.md-typeset .admonition.note > .admonition-title {
+  background-color: rgba(42, 84, 104, 0.08);
+  color: #3a6b8a;
+}
+
+/* Danger/Error - Very muted red */
+.md-typeset .admonition.danger,
+.md-typeset .admonition.error {
+  border-left-color: #682a2a;
+  background-color: rgba(104, 42, 42, 0.05);
+}
+
+.md-typeset .admonition.danger > .admonition-title,
+.md-typeset .admonition.error > .admonition-title {
+  background-color: rgba(104, 42, 42, 0.08);
+  color: #8a3a3a;
+}
+
+/* Success/Tip - Use theme accent */
+.md-typeset .admonition.success,
+.md-typeset .admonition.tip {
+  border-left-color: var(--retro-primary);
+  background-color: var(--retro-bg-subtle);
+}
+
+.md-typeset .admonition.success > .admonition-title,
+.md-typeset .admonition.tip > .admonition-title {
+  background-color: var(--admonition-title-bg);
+  color: var(--retro-primary);
+}
+
+/* ============================================
+   Buttons
+   ============================================ */
+
+.md-typeset .md-button {
+  background-color: var(--retro-bg-medium);
+  color: var(--retro-primary);
+  border: 1px solid var(--retro-border-primary);
+  font-family: 'Courier New', monospace;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background-color 0.18s ease,
+              color 0.18s ease,
+              border-color 0.18s ease;
+}
+
+.md-typeset .md-button:hover {
+  background-color: var(--retro-bg-dark);
+  color: var(--retro-primary-bright);
+  border-color: var(--retro-border-hover);
+  box-shadow: none;
+  transform: none;
+}
+
+/* ============================================
+   Tabs
+   ============================================ */
+
+.md-tabs {
+  background-color: var(--retro-matte-black);
+  border-bottom: 1px solid var(--retro-border-primary);
+}
+
+.md-tabs__link {
+  color: var(--retro-text-primary);
+  font-family: 'Courier New', monospace;
+  text-transform: uppercase;
+  font-size: 0.74rem;
+  letter-spacing: 1px;
+}
+
+.md-tabs__link--active {
+  color: var(--retro-primary);
+  border-bottom: 1px solid var(--retro-primary);
+}
+
+.md-tabs__link:hover {
+  color: var(--retro-primary-bright);
+  text-shadow: none;
+}
+
+/* ============================================
+   Blockquotes
+   ============================================ */
+
+.md-typeset blockquote {
+  border-left: 2px solid var(--retro-primary);
+  background-color: var(--retro-bg-very-subtle);
+  color: var(--retro-text-primary);
+  padding: 0.75rem 1rem;
+  font-style: italic;
+}
+
+/* ============================================
+   Lists
+   ============================================ */
+
+.md-typeset ul li::marker,
+.md-typeset ol li::marker {
+  color: var(--retro-primary);
+}
+
+/* ============================================
+   Horizontal Rules
+   ============================================ */
+
+.md-typeset hr {
+  border-bottom: 1px solid var(--retro-border-primary);
+  margin: 2rem 0;
+}
+
+/* ============================================
+   Scrollbar
+   ============================================ */
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--retro-matte-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border: 1px solid var(--retro-border-primary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+  box-shadow: none;
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+
+.md-footer {
+  background-color: var(--retro-matte-black);
+  border-top: 1px solid var(--retro-border-primary);
+  color: var(--retro-text-secondary);
+}
+
+.md-footer-meta {
+  background-color: var(--retro-matte-black);
+}
+
+/* Footer Copyright Text */
+.md-footer-copyright {
+  font-family: 'Courier New', monospace;
+  font-size: 0.7rem;
+  color: rgba(138, 138, 138, 0.8);
+  letter-spacing: 0.2px;
+  opacity: 0.85;
+  padding: 1rem 0.8rem !important;
+}
+
+/* Footer Social Icons */
+.md-footer__inner .md-social {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.md-social__link {
+  color: var(--social-icon) !important;
+  transition: color 0.2s ease;
+}
+
+.md-social__link:hover {
+  color: var(--social-icon-hover) !important;
+}
+
+.md-social__link svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  fill: currentColor;
+}
+
+/* Responsive Footer */
+@media screen and (max-width: 44.9375em) {
+  .md-footer-copyright {
+    font-size: 0.66rem;
+  }
+  
+  .md-social__link svg {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+}
+
+/* ============================================
+   Content Spacing & Alignment
+   ============================================ */
+
+.md-content__inner {
+  padding: 2rem 1.5rem;
+}
+
+/* Align content with TOC sidebar on larger screens */
+@media screen and (min-width: 76.25em) {
+  .md-content__inner {
+    padding-right: 1.5rem;
+    padding-left: 2rem;
+  }
+  
+  /* Ensure content doesn't overflow into TOC */
+  .md-sidebar--secondary {
+    margin-left: 1rem;
+  }
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+
+@media screen and (max-width: 76.1875em) {
+  .md-nav--primary .md-nav__title {
+    background-color: var(--retro-bg-medium);
+    color: var(--retro-primary);
+  }
+}
+
+/* ============================================
+   Print
+   ============================================ */
+
+@media print {
+  body {
+    background-color: white !important;
+    color: black !important;
+  }
+
+  .md-typeset h1,
+  .md-typeset h2,
+  .md-typeset h3 {
+    color: black !important;
+    text-shadow: none !important;
+  }
+}
